@@ -84,25 +84,30 @@ namespace myworld{
                     userInput = userInput + userInput1 + userInput2;
                     firstNumber = Calculator(firstNumber, oper, secondNumber);
                     
+                    string? gagrdzeleba;
                     while(true){
                         Console.WriteLine("gsurt operaciis gagrdzeleba? (daweret ki an ara)");
-                        string? gagrdzeleba = Console.ReadLine();
-                        if(gagrdzeleba == "ki")break;
-                        else if(gagrdzeleba == "ara"){
-                            Console.WriteLine($"{userInput}={firstNumber}");
-                            while(true){
-                                Console.WriteLine("gsurt sxva operaciis shesruleba? (daweret ki an ara)");
-                                string? otherOperation = Console.ReadLine();
-                                if(otherOperation == "ki") break;
-                                else if (otherOperation == "ara") return;
-                                else{
-                                    Console.WriteLine("pasuxi aradamakmayofilebelia!");
-                                }
-                            }
-                        }
-                        else{
+                        gagrdzeleba = Console.ReadLine();
+                        
+                        if(gagrdzeleba  != "ara" && gagrdzeleba != "ki"){
                             Console.WriteLine("migebuli pasuxi ar sheesabameba pirobebs");
                         }
+                        else break;
+                    }
+                    
+                    if(gagrdzeleba == "ara"){
+                        Console.WriteLine($"{userInput}={firstNumber}");break;
+                            
+                    }
+                }
+                
+                while(true){
+                    Console.WriteLine("gsurt sxva operaciis shesruleba? (daweret ki an ara)");
+                    string? otherOperation = Console.ReadLine();
+                    if(otherOperation == "ki") break;
+                    else if (otherOperation == "ara") return;
+                    else{
+                        Console.WriteLine("pasuxi aradamakmayofilebelia!");
                     }
                 }
             }    
